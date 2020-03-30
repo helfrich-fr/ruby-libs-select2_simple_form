@@ -66,13 +66,7 @@ var Select2SimpleForm = (function($) {
 
       var formatResult = function (result, container, query, escapeMarkup){
         var markup=[];
-        if (typeof this.text !== "undefined") { 
-          // safe to use the function
-          markMatch(this.text(result), query.term, markup, escapeMarkup);
-        }
-        else {
-          debugger;
-        }
+        markMatch(result.text, query.term, markup, escapeMarkup);
         return markup.join("");
       }
 
