@@ -81,9 +81,7 @@ var Select2SimpleForm = (function($) {
         dataType: 'json',
         quietMillis: 250,
         data: function (term, page) {
-          return {
-            q: term, page: page
-          };
+          return $.extend({ q: term, page: page }, $input.data('ajax-params'));
         },
         results: function (data, page) {
           return { results: data };
